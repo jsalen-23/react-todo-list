@@ -1,4 +1,4 @@
-import { MdClear, MdOutlineCheckCircle, MdOutlineCancel } from 'react-icons/md';
+import { MdClear, MdOutlineCheckCircle } from 'react-icons/md';
 import { List, Task, DeleteWrapper, CheckWrapper } from './styles';
 
 export const TodoItem = ({ text, completed, onComplete, onDelete }) => (
