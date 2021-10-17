@@ -30,25 +30,30 @@ export const AppUI = () => {
     <>
       <GlobalStyles />
       <Layout>
-        <TodoCounter />
-        <TodoSearch />
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
-            {filterTodos.length === 0 && <TodoEmpty />}
-            <TodoList>
-              {filterTodos.map((todo, idx) => (
-                <TodoItem
-                  key={idx}
-                  {...todo}
-                  onComplete={() => completeTodo(todo.text)}
-                  onDelete={() => deleteTodo(todo.text)}
-                />
-              ))}
-            </TodoList>
-          </>
-        )}
+        <>
+          {filterTodos.length === 0 ? (
+            <TodoEmpty />
+          ) : (
+            <>
+              <TodoCounter />
+              <TodoSearch />
+              {loading ? (
+                <Loading />
+              ) : (
+                <TodoList>
+                  {filterTodos.map((todo, idx) => (
+                    <TodoItem
+                      key={idx}
+                      {...todo}
+                      onComplete={() => completeTodo(todo.text)}
+                      onDelete={() => deleteTodo(todo.text)}
+                    />
+                  ))}
+                </TodoList>
+              )}
+            </>
+          )}
+        </>
         {openModal && (
           <Modal setOpenModal={setOpenModal}>
             <TodoForm />
