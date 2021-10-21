@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export function useLocalStorage(key, initialValue) {
   const [loading, setLoading] = useState(false);
+  const [sync, setSync] = useState(true);
   const [error, setError] = useState(false);
   const [storedValue, setStoredValue] = useState([]);
 
@@ -23,6 +24,7 @@ export function useLocalStorage(key, initialValue) {
     try {
       const item = window.localStorage.getItem(key);
       setLoading(false);
+      setSync(true)
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       console.log(error);
@@ -31,13 +33,18 @@ export function useLocalStorage(key, initialValue) {
     }
   };
 
+  const synchronize = () => {
+    setLoading(true);
+    setSync(false);
+  }
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       const value = fetchStoredValue();
       setStoredValue(value);
-    }, 1000);
-  }, []);
+    }, 2000);
+  }, [sync]);
 
-  return { storedValue, setValue, loading, error };
+  return { storedValue, setValue, loading, error, synchronize };
 }

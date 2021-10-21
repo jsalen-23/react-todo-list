@@ -15,4 +15,5 @@ export const Button = styled.button`
   background-color: #e4e4e4;
   border-radius: 4px;
   text-transform: uppercase;
+  opacity: ${props => props.disabled ? '.6' : '1'};
 `;

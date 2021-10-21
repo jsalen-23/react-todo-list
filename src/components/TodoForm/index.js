@@ -1,10 +1,7 @@
-import { useContext, useState } from 'react';
-import { TodoContext } from '../../context/TodoContext';
-
+import { useState } from 'react';
 import { Form, Label, Description, ButtonWrapper, Button } from './styles';
 
-export const TodoForm = () => {
-  const { createTodo, setOpenModal } = useContext(TodoContext);
+export const TodoForm = ({ createTodo, setOpenModal }) => {
   const [value, setValue] = useState('');
 
   const onSubmit = (e) => {

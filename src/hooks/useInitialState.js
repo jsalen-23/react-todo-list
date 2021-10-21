@@ -7,6 +7,7 @@ export const useInitialState = () => {
     setValue: saveTodos,
     loading,
     error,
+    synchronize,
   } = useLocalStorage('TODOS_V1', []);
 
   const [search, setSearch] = useState('');
@@ -56,5 +57,6 @@ export const useInitialState = () => {
     completeTodo,
     openModal,
     setOpenModal,
+    synchronize,
   };
 };

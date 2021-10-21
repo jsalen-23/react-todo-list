@@ -12,5 +12,5 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  ${fadeIn({ time: '0.3s' })}
+  ${fadeIn({ time: '0.25s' })}
 `;
