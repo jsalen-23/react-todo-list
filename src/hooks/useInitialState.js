@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useLocalStorage } from './useLocalStorage';
+import { useState } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
 export const useInitialState = () => {
   const {
@@ -8,9 +8,9 @@ export const useInitialState = () => {
     loading,
     error,
     synchronize,
-  } = useLocalStorage('TODOS_V1', []);
+  } = useLocalStorage("TODOS_V1", []);
 
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
   const completed = todos.filter((todo) => todo.completed).length;
