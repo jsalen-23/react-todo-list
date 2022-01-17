@@ -1,18 +1,18 @@
-import { TodoCounter } from '../components/TodoCounter/';
-import { TodoItem } from '../components/TodoItem';
-import { TodoList } from '../components/TodoList';
-import { TodoSearch } from '../components/TodoSearch';
-import { Layout } from '../components/Layout';
-import { TodoButton } from '../components/TodoButton';
-import { Modal } from '../components/Modal';
-import { TodoForm } from '../components/TodoForm';
-import { Loading } from '../components/Loading';
-import { TodoEmpty } from '../components/TodoEmpty';
+import { TodoCounter } from "../components/TodoCounter/";
+import { TodoItem } from "../components/TodoItem";
+import { TodoList } from "../components/TodoList";
+import { TodoSearch } from "../components/TodoSearch";
+import { Layout } from "../components/Layout";
+import { TodoButton } from "../components/TodoButton";
+import { Modal } from "../components/Modal";
+import { TodoForm } from "../components/TodoForm";
+import { Loading } from "../components/Loading";
+import { TodoEmpty } from "../components/TodoEmpty";
 
-import { useInitialState } from '../hooks/useInitialState';
-import { GlobalStyles } from '../statics/styles/GlobalStyles';
-import { TodoHeader } from '../components/TodoHeader';
-import { ChangeAlert } from '../components/ChangeAlert';
+import { useInitialState } from "../hooks/useInitialState";
+import { GlobalStyles } from "../statics/styles/GlobalStyles";
+import { TodoHeader } from "../components/TodoHeader";
+import { ChangeAlert } from "../components/ChangeAlert";
 
 function App() {
   const {
@@ -49,15 +49,7 @@ function App() {
           onError={() => <div>Error</div>}
           onLoading={() => <Loading />}
           onEmpty={() => <TodoEmpty />}
-          onNoResults={(query) => <p>No results for {query}</p>}
-          /* render={(todo, idx) => (
-            <TodoItem
-              key={idx}
-              {...todo}
-              onComplete={() => completeTodo(todo.text)}
-              onDelete={() => deleteTodo(todo.text)}
-            />
-          )} */
+          onNoResults={(query) => <TodoEmpty />}
         >
           {(todo, idx) => (
             <TodoItem
@@ -76,7 +68,9 @@ function App() {
           </Modal>
         )}
 
-        <TodoButton setOpenModal={setOpenModal} loading={loading}pletado >Add Task</TodoButton>
+        <TodoButton setOpenModal={setOpenModal} loading={loading} pletado>
+          Add Task
+        </TodoButton>
       </Layout>
     </>
   );

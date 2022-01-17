@@ -1,23 +1,25 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const List = styled.li`
   position: relative;
   width: 100%;
-  min-height: 60px;
-  margin: 24px 0;
   padding: 16px;
   display: flex;
-  align-items: center;
   border: 1px solid #444c56;
   border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border: 1px solid #e4e4e4;
+  }
 `;
 
 export const CheckWrapper = styled.div`
   margin-right: 16px;
   display: inline-flex;
-  color: ${(props) => (props.completed ? '#0cb51a' : 'e4e4e4')};
-  opacity: ${(props) => (props.completed ? '1' : '0.6')};
-  transition: all 0.2s ease;
+  color: ${(props) => (props.completed ? "#0cb51a" : "e4e4e4")};
+  opacity: ${(props) => (props.completed ? "1" : "0.6")};
+  transition: all 0.3s ease;
   cursor: pointer;
 `;
 
@@ -26,6 +28,7 @@ export const DeleteWrapper = styled.div`
   right: 16px;
   top: calc(0% - 13px);
   color: #e03838;
+  cursor: pointer;
 `;
 
 export const Checkbox = styled.input`
@@ -36,7 +39,7 @@ export const Checkbox = styled.input`
 
 export const Task = styled.p`
   font-size: 16px;
-  text-decoration: ${(props) => (props.completed ? 'line-through' : '')};
-  color: ${(props) => (props.completed ? '#768390' : '#e4e4e4')};
+  text-decoration: ${(props) => (props.completed ? "line-through" : "")};
+  color: ${(props) => (props.completed ? "#768390" : "#e4e4e4")};
   transition: color 0.2s ease;
 `;

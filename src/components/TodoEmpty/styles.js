@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.section`
+  grid-area: 1/1/-1/-1;
   width: 100%;
-  height: 70vh;
   margin: 0 auto;
   display: grid;
   place-items: center;

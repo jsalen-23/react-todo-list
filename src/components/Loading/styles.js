@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { loadingRing } from '../../statics/styles/animations';
+import styled from "styled-components";
+import { loadingRing } from "../../statics/styles/animations";
 
 export const Wrapper = styled.section`
+  grid-area: 1/1/-1/-1;
   width: 100%;
-  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,9 +27,9 @@ export const Loader = styled.div`
     border-radius: 50%;
     border-color: #fff transparent transparent transparent;
     ${loadingRing({
-      time: '1.4s',
-      type: 'cubic-bezier(0.5, 0, 0.5, 1)',
-      iteration: 'infinite',
+      time: "1.4s",
+      type: "cubic-bezier(0.5, 0, 0.5, 1)",
+      iteration: "infinite",
     })}
 
     &:nth-child(1) {

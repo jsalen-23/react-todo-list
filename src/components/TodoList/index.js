@@ -1,3 +1,5 @@
+import { Container } from "./styles";
+
 export const TodoList = ({
   error,
   loading,
@@ -14,12 +16,12 @@ export const TodoList = ({
   const getRender = children || render;
 
   return (
-    <section>
+    <Container>
       {error && onError()}
       {loading && onLoading()}
-      {(!loading && !total) && onEmpty()}
-      {(!!total && !filterTodos.length) && onNoResults(search)}
+      {!loading && !total && onEmpty()}
+      {!!total && !filterTodos.length && onNoResults(search)}
       {!loading && filterTodos.map(getRender)}
-    </section>
+    </Container>
   );
 };

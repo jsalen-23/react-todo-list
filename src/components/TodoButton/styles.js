@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Button = styled.button`
   position: fixed;
@@ -6,14 +6,15 @@ export const Button = styled.button`
   max-width: 425px;
   height: 45px;
   margin: 0 auto;
-  right: 16px;
+  right: 0;
   bottom: 16px;
-  left: 16px;
+  left: 0;
   font-size: 16px;
   font-weight: 700;
   color: #373e47;
   background-color: #e4e4e4;
   border-radius: 4px;
   text-transform: uppercase;
-  opacity: ${props => props.disabled ? '.6' : '1'};
+  opacity: ${(props) => (props.disabled ? ".6" : "1")};
+  cursor: pointer;
 `;
